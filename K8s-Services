@@ -1,0 +1,16 @@
+Nodeport service
+LoadBalancer 
+Clusterip service
+
+ 1. NodePort
+Access Type: External access via <NodeIP>:<NodePort>
+Use Case: Exposes the service on each node’s IP at a static port.
+Example: http://<EC2-IP>:30007
+🔹 2. LoadBalancer
+Access Type: External access via a cloud provider-managed load balancer.
+Use Case: Automatically provisions an external IP to route traffic to your service.
+Example: http://<ELB-DNS-Name>
+🔹 3. ClusterIP
+Access Type: Internal-only within the cluster.
+Use Case: Default service type for internal communication between pods.
+Example: http://<service-name>.<namespace>.svc.cluster.local
