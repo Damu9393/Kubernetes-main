@@ -1,0 +1,20 @@
+eksctl version - to know version of the eks cluster
+######## Kubernetes all commands start with kubectl only ######
+If we Need to create Cluster so need to have IAM role and attache to the Ec2 for the cluster
+kubectl get pods ####to show the pods list ##
+kubectl get nodes ####to show the nodes list ##
+.Kube ### automatically create in ec2 if you want to check cluster certificate and iam role then  swich to  ( cd .kube----- cat config )then you will see the details of cluster.
+if you are unbale to intract with cluster once installed then use this command 
+aws eks update-kubeconfig --region us-east-1 --name Innova-d  ### change the region and clusrname according to you ###
+kubectl apply -f pod.yml  ### to apply or create pod ###
+kubectl describe pod myapp  ### to check more info about the pods#
+If you want to verify the pods like How many can we create use this command 
+kubectl get nodes -o json | jq '.items[].status.capacity.pods'
+
+How to check NodeGroup name ##eksctl get nodegroup --cluster (clustername --region region-name)
+
+eksctl get nodegroup --cluster Innova-T --region us-east-1
+
+kubectl get nodes -o wide  ## it will show pod on which node also by using this command##
+How to delete pod 
+kubectl delete pod <podname>
