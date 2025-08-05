@@ -8,3 +8,5 @@ for j in {1..10}; do
   wait
 done
 ##########################################################################################################
+
+How to run after pasted just give ------    sh test.sh  it will run 
