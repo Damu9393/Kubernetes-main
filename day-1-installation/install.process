@@ -37,16 +37,16 @@ You can follow same procedure in the official  AWS document [Getting started wit
 
 4. Create your cluster and nodes 
    ```sh
-   eksctl create cluster --name cluster-name  \
-   --region region-name \
-   --node-type instance-type \
-   --nodes-min 2 \
-   --nodes-max 2 \ 
-   --zones <AZ-1>,<AZ-2>
+   eksctl create cluster --name Innova-d \  ### Cluster-name change here ###
+  --region us-east-1 \            ###change the region here####
+  --node-type t2.micro \          ####Change the type that you want###
+  --nodes-min 2 \                 ####  Change the count that you want ###
+  --nodes-max 2 \                 ####  Change the count that you want ###
+  --zones us-east-1a,us-east-1b   ### Change the Availability Zones ###
    
    example:
    eksctl create cluster --name naresh \
-      --region ap-south-1 \
+      --region us-east-1 \
    --node-type t2.small \
 
 
