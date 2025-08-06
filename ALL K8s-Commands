@@ -33,6 +33,9 @@ kubectl delete -f .
 kubectl top node ## to check Node cpu and ram utilization ###
 Alias k=kubectl   ### Instead of writing kubectl every time you can use reduse the zise from kubectl to K by using Alias
 
+ To delete the EKS clsuter 
+   ```sh 
+   eksctl delete cluster naresh --region ap-south-1
 
 
  
