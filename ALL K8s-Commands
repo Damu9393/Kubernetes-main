@@ -18,11 +18,12 @@ eksctl get nodegroup --cluster Innova-T --region us-east-1
 kubectl get nodes -o wide  ## it will show pod on which node also by using this command##
 How to delete pod 
 kubectl delete pod <podname>
+kubectl delete pods --all  ###To delete all pods at one time
 kubectl get deploy #########to show all running pods
 Kubectl get rs ### rs means replicaset#### to show running pods but some different is there##
 
 kubectl get svc   ###To show the services name####
-kubectl describe svc <service-name>  ### mode info about sevices 
+kubectl describe svc <service-name>  ### more info about sevices 
 
 How to access the pod ?
 Public ip of worker node and port number
@@ -37,6 +38,8 @@ Alias k=kubectl   ### Instead of writing kubectl every time you can use reduse t
    ```sh 
    eksctl delete cluster naresh --region ap-south-1
 
+How to log in to Pod ?
+kubectl exec -it <pod-name> -- /bin/bash
 
  
 
