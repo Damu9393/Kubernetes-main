@@ -1,0 +1,47 @@
+Argo CD Installation Steps
+Argo CD is a declarative continuous delivery tool for Kubernetes. It can be used as a standalone tool or as part of your CI/CD workflow to deliver needed resources to your clusters.
+
+✅ Installation Process:
+bash
+Copy
+Edit
+# Create a namespace for Argo CD
+kubectl create namespace argocd
+
+# Install Argo CD using the official manifest
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+# Get pods in argocd namespace
+kubectl get pods -n argocd
+
+# Get services in argocd namespace
+kubectl get svc -n argocd
+
+# Edit the argocd-server service to expose it (optional)
+kubectl edit svc argocd-server -n argocd
+
+# Alternatively, get all services to find the NodePort
+kubectl get svc -n argocd
+🌐 Accessing the Argo CD UI:
+bash
+Copy
+Edit
+# Get NodePort of the server (check type NodePort or use port-forward)
+kubectl get svc -n argocd
+
+# Get the secret (for retrieving initial admin password)
+kubectl get secrets -n argocd
+🔐 Retrieve Admin Credentials:
+bash
+Copy
+Edit
+# Extract the initial admin password
+kubectl edit secret argocd-initial-admin-secret -n argocd
+Default username: admin
+
+The password will be encoded in base64; decode it using:
+
+bash
+Copy
+Edit
+echo <base64-password> | base64 -d
