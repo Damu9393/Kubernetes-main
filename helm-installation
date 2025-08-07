@@ -1,0 +1,52 @@
+ Helm Installation
+bash
+Copy
+Edit
+# Download Helm
+https://github.com/helm/helm/releases
+
+wget https://get.helm.sh/helm-v3.14.0-linux-amd64.tar.gz
+
+# Extract the downloaded archive
+tar -zxvf helm-v3.14.0-linux-amd64.tar.gz
+
+# Move the Helm binary to /usr/local/bin
+mv linux-amd64/helm /usr/local/bin/helm
+
+# Give execute permissions
+chmod 777 /usr/local/bin/helm
+✅ Verify Helm Installation
+bash
+Copy
+Edit
+helm version
+⚠️ Note:
+After creating the cluster, we need to give IAM EC2 full access or admin access to the node group IAM role.
+Only then the EBS volume can be created by the node in EKS.
+
+📦 Step 2: Install CSI Driver in EKS Cluster
+After connecting to your EKS cluster, follow these steps:
+
+bash
+Copy
+Edit
+# Add AWS EBS CSI driver repo
+helm repo add aws-ebs-csi-driver https://kubernetes-sigs.github.io/aws-ebs-csi-driver
+
+# Update the Helm repo
+helm repo update
+
+# (Installation command for CSI driver would follow here)
+Would you like this combined with the previous Argo CD setup content into a Word or PDF document? I can generate it for easy saving and reuse.
+##########################################################
+helm create project1 and swich to prokject- and let me install tree command 
+yum install tree -y #install tree  ### Here helm installed inside the custer or inside ec2 ? inside ec2 now.
+give tree comamnd 
+
+If want to reuse same project name you cant run helm install version1 projectname 
+so you have to run this comamnd helm upgrade version1 project1
+helm get all 
+Note: service is cluster level = SVC
+  helm list -a  to list of the versions 
+
+  
