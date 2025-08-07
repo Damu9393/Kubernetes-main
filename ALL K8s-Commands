@@ -41,6 +41,9 @@ Alias k=kubectl   ### Instead of writing kubectl every time you can use reduse t
 How to log in to Pod ?
 kubectl exec -it <pod-name> -- /bin/bash
 
+is used in Kubernetes to list all pods across all namespaces.
+kubectl get pod -A
+kubectl create ns test ## to crete test 
  
 
 
