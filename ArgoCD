@@ -44,4 +44,4 @@ The password will be encoded in base64; decode it using:
 bash
 Copy
 Edit
-echo <base64-password> | base64 -d
+echo <base64-password> | base64 --decode           if you want enter encode as well in last 
