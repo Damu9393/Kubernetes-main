@@ -46,7 +46,14 @@ kubectl get pod -A
 kubectl create ns test ## to crete test 
  
 
+Log in to Mysql pod 
+kubectl exec -it <mysql-pod-name> -- /bin/bash
+if bin/bash not there use below command 
+kubectl exec -it <mysql-pod-name> -- sh
+log in 
+mysql -u <username> -p
 
+log in to node give simply ssh node-ip hit enter!
 
 
 
