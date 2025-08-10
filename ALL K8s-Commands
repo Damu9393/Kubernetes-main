@@ -55,5 +55,17 @@ mysql -u <username> -p
 
 log in to node give simply ssh node-ip hit enter!
 
+From the screenshot, here are the commands shown:
 
+bash
+Copy
+Edit
+aws eks update-kubeconfig --name naresh --profile dev
+Updates kubeconfig for the naresh cluster using the dev AWS CLI profile (for a specific user with updated permissions).
+
+bash
+Copy
+Edit
+aws eks update-kubeconfig --name naresh
+Updates kubeconfig for the naresh cluster using the default AWS CLI profile (often with admin permissions inside the cluster).
 
